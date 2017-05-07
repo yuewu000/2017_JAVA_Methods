@@ -1,0 +1,15 @@
+public class power1 {
+	public static int powerInt(int m , int n){
+		if (n == 0) return 1;
+		if (n == 1) return m;
+//		if (m > Math.sqrt(Long.MAX_VALUE)) throw new NullPointerException;
+		if (n == 2) return m*m;
+		return powerInt(m, n/2)*powerInt(m, n/2)*powerInt(m,n%2);
+	}
+	
+	public static void main(String[] args){
+		System.out.println("the power 8th power of 3 is " + powerInt(3,8));
+		System.out.println("the power 7th power of 3 is " + powerInt(3,7));
+	}
+	
+}
