@@ -1,0 +1,52 @@
+package interview2;
+import java.util.*;
+
+public class MinStepMaze1 {
+public static int BFS(int[][] mat, int x, int y){
+	if (mat == null) return -1;
+	int M = mat.length;
+	if (M == 0) return -1;
+	int N = mat[0].length;
+	boolean[][] visited = new boolean[M][N];
+	//create queue for BFS
+	LinkedList<List<Integer>> queue = new LinkedList<List<Integer>>();
+	
+	visited[0][0] = true;
+	//(0,0,1) 0,0: x,y; 1: the current distance from the source( from (0,0) to the next step here)
+  List<Integer> list = Arrays.asList(0,0,1);
+	queue.add(list);
+	while (queue.size() !=0)
+	{
+		List<Integer> s = queue.poll();
+		int xCurr = s.get(0);
+		int yCurr = s.get(1);
+		int lCurr = s.get(2);
+		if ((xCurr-1 == x && yCurr ==y)||(xCurr+1 == x && yCurr ==y)||(xCurr == x && yCurr-1 ==y)||(xCurr == x && yCurr+1 ==y))
+			return lCurr;
+		List<Integer> listXm1 = Arrays.asList(xCurr-1,yCurr,lCurr+1);
+		List<Integer> listXp1 = Arrays.asList(xCurr+1,yCurr,lCurr+1);
+		List<Integer> listYm1 = Arrays.asList(xCurr,yCurr-1,lCurr+1);
+		List<Integer> listYp1 = Arrays.asList(xCurr,yCurr+1,lCurr+1);
+		if ( xCurr-1 >=0 && mat[xCurr-1][yCurr] == 1 && visited[xCurr-1][yCurr] == false) queue.add(listXm1);
+		if ( xCurr+1 <M && mat[xCurr+1][yCurr] == 1 && visited[xCurr+1][yCurr] == false) queue.add(listXp1);
+		if ( yCurr-1 >=0 && mat[xCurr][yCurr-1] == 1 && visited[xCurr][yCurr-1] == false) queue.add(listYm1);
+		if+ ( yCurr+1 <N && mat[xCurr][yCurr+1] == 1 && visited[xCurr][yCurr+1] == false) queue.add(listYp1);
+		}+
+	
+return -1;
+}
+public static void main(String[] args){
+	int[][] matIn = {{1, 0, 1, 1, 1, 1, 0, 1, 1, 1 },
+            {1, 0, 1, 0, 1, 1, 1, 0, 1, 1 },
+            {1, 1, 1, 0, 1, 1, 0, 1, 0, 1 },
+            {0, 0, 0, 0, 1, 0, 0, 0, 0, 1 },
+            {1, 1, 1, 0, 1, 1, 1, 0, 1, 0 },
+            {1, 0, 1, 1, 1, 1, 0, 1, 0, 0 },
+            {1, 0, 0, 0, 0, 0, 0, 0, 0, 1 },
+            {1, 0, 1, 1, 1, 1, 0, 1, 1, 1 },
+            {1, 1, 0, 0, 0, 0, 1, 0, 0, 1 },};
+	
+	System.out.print(BFS(matIn, 3, 4));
+}
+
+}
