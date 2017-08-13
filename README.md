@@ -6,3 +6,4 @@ JAVA Algorithms and OO Designs
 3. Shortest path in Maze
 4. Distance between two nodes in BST
 5. Course Schedule II
+6. Palindrome number-recursive method
