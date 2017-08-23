@@ -7,3 +7,5 @@ JAVA Algorithms and OO Designs
 4. Distance between two nodes in BST
 5. Course Schedule II
 6. Palindrome linked list-recursive method
+7. kth node from the end- linkedlist - recursive
+8. merge k-sorted linkedlist - comparator
