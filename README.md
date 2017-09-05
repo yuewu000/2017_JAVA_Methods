@@ -9,3 +9,6 @@ JAVA Algorithms and OO Designs
 6. Palindrome linked list-recursive method
 7. kth node from the end- linkedlist - recursive
 8. merge k-sorted linkedlist - comparator
+
+Next items start from 1001 for a new series
+1001. Max Non Negative SubArray
